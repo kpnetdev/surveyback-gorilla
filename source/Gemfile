@@ -8,6 +8,8 @@ gem 'sinatra-contrib'
 
 gem 'thin'
 
+gem 'bcrypt'
+
 gem 'activesupport'
 gem 'activerecord'
 
