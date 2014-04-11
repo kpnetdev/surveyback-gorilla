@@ -1,0 +1,6 @@
+<h2>My surveys:</h2>
+<ol>
+  <% @user.surveys.each do |survey| %>
+    <li><%= survey.name %></li>
+  <% end %>
+</ol>
