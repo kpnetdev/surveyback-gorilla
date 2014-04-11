@@ -5,3 +5,5 @@ Surveyback Gorilla
 (Click to go to our team Trello)
 
 ![Imgur](http://i.imgur.com/Qzy5yW8)
+
+![Imgur](http://i.imgur.com/0TK3GzT)
