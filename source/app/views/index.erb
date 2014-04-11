@@ -1,4 +1,4 @@
 
-<% if session[:page] == :create_new_survey %>
+<% if current_page?(:create_new_survey) %>
 	<%= erb :_survey_create_new_form %>
 <% end %>
