@@ -7,8 +7,10 @@ Surveyback Gorilla
 Team Dynamic
 
 Constant workflow - #1 rule is no getting stuck, no wasted cycles
+
 Four-way vertical slicing - each member responsible for their slice and its API
-=======
+
+
 ![Imgur](http://i.imgur.com/Qzy5yW8)
 
 ![Imgur](http://i.imgur.com/0TK3GzT)
