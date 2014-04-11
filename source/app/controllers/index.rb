@@ -11,11 +11,3 @@ post '/surveys' do
 	set_page(:logged_in_home_page)
 	erb :index
 end
-
-def set_page(new_page)
-	session[:page] = new_page
-end
-
-def current_page?(page)
-	session[:page] == page
-end
