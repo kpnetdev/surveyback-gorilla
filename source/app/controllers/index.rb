@@ -1,3 +1,10 @@
+enable :sessions
+require 'bcrypt'
+
+get '/' do
+  erb :index
+end
+
 get '/surveys/new' do
 	set_page(:create_new_survey_page)
 	erb :index
@@ -10,4 +17,3 @@ post '/surveys' do
 
 	set_page(:logged_in_home_page)
 	erb :index
-end
