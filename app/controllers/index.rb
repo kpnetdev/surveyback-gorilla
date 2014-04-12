@@ -35,10 +35,11 @@ get '/sessions/new' do
 end
 
 post '/sessions' do #login
-	@user = User.find_by_email(params[:user][:email])
+	if @user = User.find_by_email(params[:user][:email])
 	  if @user.password == params[:user][:password]
 	    session[:user_id] = @user.id
 	  end
+	end
 	redirect '/'
 end
 
