@@ -1,0 +1,9 @@
+<h2><%= @survey.name %></h2>
+<ul>
+	<% @survey.questions.each do |question| %>
+		<li>
+			<h3><%= question.title %></h3>
+			<p><%= question.body %></p>
+		</li>
+	<% end %>
+</ul>
