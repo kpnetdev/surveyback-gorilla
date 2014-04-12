@@ -30,13 +30,13 @@ get '/sessions/new' do
 end
 
 post '/sessions' do
-	@user = User.find_by_email(params[:email])
-	  if @user.password == params[:password]
-	    session[:user_id] = @user_id
+	@user = User.where(email: params[:user][:email]).first
+	  if @user && @user.password == params[:user][:password]
+	    session[:user_id] = @user.id
 	   else
-	   	nil
+	    nil
 	  end
-	redirect '/'
+	redirect '/profile'
 end
 
 get '/users/new' do
