@@ -1,11 +1,8 @@
-class User < ActiveRecord::Base
-  has_many :surveys
-end
-
-
 require 'bcrypt'
 
 class User < ActiveRecord::Base
+  has_many :surveys
+
   # users.password_hash in the database is a :string
   include BCrypt
 

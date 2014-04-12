@@ -2,16 +2,15 @@ enable :sessions
 require 'bcrypt'
 
 get '/' do
-	@user = current_user
-	if @user
+	if @user = current_user
 		set_page(:logged_in_home_page)
 	  erb :index
 	else
-		erb :login
+		set_page(:login_or_create_account)
+		erb :index
 	end
 end
 		
-
 get '/surveys/new' do
 	set_page(:create_new_survey_page)
 	erb :index
@@ -25,29 +24,35 @@ post '/surveys' do
 	erb :index
 end
 
-get '/sessions/new' do
-  erb :sign_in 
+get '/surveys/:id' do 
+	@survey = Survey.find(params[:id])
+	set_page(:individual_survey)
+	erb :index
 end
 
-post '/sessions' do
-	@user = User.where(email: params[:user][:email]).first
-	  if @user && @user.password == params[:user][:password]
+get '/sessions/new' do
+  erb :_sign_in_or_create_account
+end
+
+
+post '/sessions' do #login
+	if @user = User.find_by_email(params[:user][:email])
+	  if @user.password == params[:user][:password]
 	    session[:user_id] = @user.id
-	   else
-	    nil
 	  end
-	redirect '/profile'
+	end
+	redirect '/'
+
 end
 
 get '/users/new' do
   erb :sign_up
 end
 
-post '/users' do
-	@user = User.new(params[:user])
-	@user.password = params[:password]
+post '/users' do #create account
+	@user = User.new(email: params[:user][:email], name: params[:user][:name])
+	@user.password = params[:user][:password]
 	@user.save
-	session[:user_id] = @user_id
 	redirect '/'
 end
 
