@@ -2,6 +2,7 @@ enable :sessions
 require 'bcrypt'
 
 get '/' do
+	@user = current_user
 	set_page(:logged_in_home_page)
   erb :index
 end
