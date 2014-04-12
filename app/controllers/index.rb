@@ -12,7 +12,6 @@ get '/' do
 	end
 end
 		
-
 get '/surveys/new' do
 	set_page(:create_new_survey_page)
 	erb :index
@@ -23,6 +22,12 @@ post '/surveys' do
 	survey.questions << Question.create(title: params[:title], body: params[:body])
 
 	set_page(:logged_in_home_page)
+	erb :index
+end
+
+get '/surveys/:id' do 
+	@survey = Survey.find(params[:id])
+	set_page(:individual_survey)
 	erb :index
 end
 
