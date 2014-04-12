@@ -1,9 +1,11 @@
+<% if current_page?(:login_or_create_account) %>
+	<%= erb :_login_or_create_account %>
+<% end %>
+
 <% if current_page?(:logged_in_home_page) %>
-<%= erb :_welcome_message %>
-<%= erb :_my_survey_list %>
-<%= erb :_create_survey_button %>
+	<%= erb :_logged_in_home_page %>
 <% end %>
 
 <% if current_page?(:create_new_survey_page) %>
-        <%= erb :_survey_create_new_form %>
+    <%= erb :_survey_create_new_form %>
 <% end %>
