@@ -1,0 +1,27 @@
+/*#strip {
+  width: 600px;
+  margin: 30px auto;
+  padding-top: 120px;
+  background: url('') no-repeat 0 0;
+}
+*/
+#navbar {
+  border-top: 30px;
+  border-bottom: 30px;
+  background: url('img/navbar.png');
+  font-size: 1.75em;
+  text-transform: uppercase;
+  padding: 24px 0;
+  text-align: center;
+}
+
+
+#navbar li {
+  display: inline;
+  font-weight: bold;
+  background: url();
+  vertical-align: relative;
+  margin: 0 20px;
+}
+
+
