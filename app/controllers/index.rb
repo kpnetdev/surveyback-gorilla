@@ -7,7 +7,8 @@ get '/' do
 		set_page(:logged_in_home_page)
 	  erb :index
 	else
-		erb :login
+		set_page(:login_or_create_account)
+		erb :index
 	end
 end
 		
@@ -26,15 +27,13 @@ post '/surveys' do
 end
 
 get '/sessions/new' do
-  erb :sign_in 
+  erb :_sign_in_or_create_account
 end
 
-post '/sessions' do
-	@user = User.find_by_email(params[:email])
-	  if @user.password == params[:password]
-	    session[:user_id] = @user_id
-	   else
-	   	nil
+post '/sessions' do #login
+	@user = User.find_by_email(params[:user][:email])
+	  if @user.password == params[:user][:password]
+	    session[:user_id] = @user.id
 	  end
 	redirect '/'
 end
@@ -43,11 +42,10 @@ get '/users/new' do
   erb :sign_up
 end
 
-post '/users' do
-	@user = User.new(params[:user])
-	@user.password = params[:password]
+post '/users' do #create account
+	@user = User.new(email: params[:user][:email], name: params[:user][:name])
+	@user.password = params[:user][:password]
 	@user.save
-	session[:user_id] = @user_id
 	redirect '/'
 end
 
