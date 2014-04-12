@@ -44,10 +44,10 @@ get '/users/new' do
 end
 
 post '/users' do
-	@user = User.create(params[:user])
+	@user = User.new(params[:user])
 	@user.password = params[:password]
-	p params[:password]
-	session[:user] = @user
+	@user.save
+	session[:user_id] = @user_id
 	redirect '/'
 end
 
