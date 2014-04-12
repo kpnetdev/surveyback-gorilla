@@ -43,6 +43,11 @@ post '/sessions' do #login
 	redirect '/'
 end
 
+delete '/sessions' do #logout
+        session[:user_id] = nil
+        redirect('/')
+end
+
 get '/users/new' do
   erb :sign_up
 end
