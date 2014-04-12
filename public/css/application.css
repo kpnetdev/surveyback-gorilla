@@ -30,6 +30,12 @@ header img {
   border: none;
 }
 
+#navbar p {
+  padding: 5px 0;
+  margin: 0;
+  font-weight: bold;
+}
+
 .btTxt {
   background: none;
 }

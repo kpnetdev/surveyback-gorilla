@@ -1,11 +1,12 @@
 <%= erb :_header %>
-<%= erb :_navbar %>
 
 <% if current_page?(:login_or_create_account) %>
-	<%= erb :_login_or_create_account %>
+  <%= erb :_logged_out_navbar %>
+  <%= erb :_login_or_create_account %>
 <% end %>
 
 <% if current_page?(:logged_in_home_page) %>
+  <%= erb :_logged_in_navbar %>
 	<%= erb :_logged_in_home_page %>
 <% end %>
 
