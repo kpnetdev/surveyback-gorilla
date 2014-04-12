@@ -1,3 +1,9 @@
+<% if current_page? %>
+<%= erb :_welcome_message %>
+<%= erb :_my_survey_list %>
+<%= erb :_create_survey_button %>
+<% end %>
+
 <% if current_page?(:create_new_survey_page) %>
-	<%= erb :_survey_create_new_form %>
+        <%= erb :_survey_create_new_form %>
 <% end %>
