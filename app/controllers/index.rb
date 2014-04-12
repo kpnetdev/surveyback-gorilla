@@ -17,10 +17,10 @@ get '/surveys/new' do
 end
 
 post '/surveys' do
-	survey = Survey.create(name: params[:name], user_id: session[:user_id])
-	survey.questions << Question.create(title: params[:title], body: params[:body])
+	@survey = Survey.create(name: params[:name], user_id: session[:user_id])
+	# survey.questions << Question.create(text: params[:text])
 
-	set_page(:logged_in_home_page)
+	set_page(:dynamic_question_creation_page)
 	erb :index
 end
 
