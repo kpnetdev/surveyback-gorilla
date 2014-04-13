@@ -35,6 +35,7 @@ delete '/sessions' do #logout
   redirect('/')
 end
 
+
 post '/sessions' do #login
 	if @user = User.find_by_email(params[:user][:email])
 	  if @user.password == params[:user][:password]
@@ -42,6 +43,7 @@ post '/sessions' do #login
 	  end
 	end
 	redirect '/'
+
 end
 
 get '/sessions/new' do

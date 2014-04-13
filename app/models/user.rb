@@ -1,9 +1,11 @@
 require 'bcrypt'
 
 class User < ActiveRecord::Base
+  validates :email, presence: true
+  validates_uniqueness_of :email
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
   has_many :surveys
-
-  # users.password_hash in the database is a :string
+ 
   include BCrypt
 
   def password
@@ -16,3 +18,7 @@ class User < ActiveRecord::Base
   end
 
 end
+
+
+
+  
