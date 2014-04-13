@@ -24,6 +24,10 @@ header img {
   margin: 0 20px;
 }
 
+#navbar form {
+  display: inline;
+}
+
 #navbar li a {
   color: black;
   padding: 5px 0;
@@ -37,4 +41,8 @@ header img {
 
 .btTxt {
   background: none;
+}
+
+h1, h2 {
+  padding: 0 30px;
 }
