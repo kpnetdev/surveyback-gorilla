@@ -46,3 +46,9 @@ header img {
 h1, h2 {
   padding: 0 30px;
 }
+
+#container {
+  min-width: 310px; 
+  height: 400px; 
+  margin: 0 auto:;
+}

@@ -8,6 +8,7 @@
 <% if current_page?(:logged_in_home_page) %>
   <%= erb :_logged_in_navbar %>
 	<%= erb :_logged_in_home_page %>
+	<%= erb :_display_graph %>
 <% end %>
 
 <% if current_page?(:create_new_survey_page) %>
@@ -18,3 +19,5 @@
 	<%= erb :_logged_in_home_page %>
 	<%= erb :_individual_survey %>
 <% end %>
+
+
