@@ -1,9 +1,9 @@
 <h1>Login</h1>
-<form id="Login" method="post" action="/sessions">
-    <label class="label" for="email">Email</label>
-    <input type="email" name="user[email]" placeholder="e.g., me@example.com" value="<%= @email %>"><br>
-    <label class="label" for="password">Password</label>
-    <input type="password" name="user[password]" placeholder="6 or more characters">
+
+<form id="log_in" method="post" action="/sessions">
+    <input type="email" name="user[email]" placeholder="email" value="<%= @email %>">
     <br>
-    <div class="submit"><input type="submit" value="Sign In"></div>
+    <input type="password" name="user[password]" placeholder="password">
+    <br>
+    <input type="submit" value="Sign In">
 </form>
