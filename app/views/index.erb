@@ -10,6 +10,10 @@
     <%= erb :_survey_create_new_form %>
 <% end %>
 
+<% if current_page?(:dynamic_question_creation_page) %>
+	<%= erb :_dynamic_question_creation_form %>
+<% end %>
+
 <% if current_page?(:individual_survey) %>
 	<%= erb :_logged_in_home_page %>
 	<%= erb :_individual_survey %>

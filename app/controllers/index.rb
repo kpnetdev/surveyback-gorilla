@@ -16,7 +16,7 @@ get '/surveys/new' do
 	erb :index
 end
 
-post '/surveys' do
+post '/surveys/new' do
 	@survey = Survey.create(name: params[:name], user_id: session[:user_id])
 	# survey.questions << Question.create(text: params[:text])
 
