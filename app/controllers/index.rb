@@ -30,7 +30,7 @@ get '/surveys/:id' do
 	erb :index
 end
 
-delete '/sessions' do #logout
+get '/sessions/logout' do #logout
   session[:user_id] = nil
   redirect('/')
 end

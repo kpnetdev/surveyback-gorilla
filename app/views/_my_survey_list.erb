@@ -1,4 +1,4 @@
-<h2>My surveys:</h2>
+<h2>Here are your surveys:</h2>
 <ol>
   <% current_user.surveys.each do |survey| %>
     <li><a href="/surveys/<%= survey.id %>"><%= survey.name %></a></li>
