@@ -30,8 +30,9 @@ get '/surveys/:id' do
 	erb :index
 end
 
-get '/sessions/new' do
-  erb :_sign_in_or_create_account
+delete '/sessions' do #logout
+  session[:user_id] = nil
+  redirect('/')
 end
 
 
@@ -43,6 +44,10 @@ post '/sessions' do #login
 	end
 	redirect '/'
 
+end
+
+get '/sessions/new' do
+  erb :_sign_in_or_create_account
 end
 
 get '/users/new' do
