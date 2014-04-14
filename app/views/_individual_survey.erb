@@ -1,9 +1,8 @@
-<h2><%= @survey.name %></h2>
-<ul>
+<h1><%= @survey.name %></h1>
+<ol>
 	<% @survey.questions.each do |question| %>
 		<li>
-			<h3><%= question.title %></h3>
-			<p><%= question.body %></p>
+			<h2><%= question.title %></h2>
 		</li>
 	<% end %>
-</ul>
+</ol>

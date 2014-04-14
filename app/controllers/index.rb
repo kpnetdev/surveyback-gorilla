@@ -10,7 +10,12 @@ get '/' do
 		erb :index
 	end
 end
-		
+
+get '/surveys' do
+	set_page(:all_surveys_list)
+	erb :index
+end
+
 get '/surveys/new' do
 	set_page(:create_new_survey_page)
 	erb :index
@@ -19,12 +24,13 @@ end
 post '/surveys' do
 	survey = Survey.create(name: params[:name], user_id: session[:user_id])
 	survey.questions << Question.create(title: params[:title], body: params[:body])
-
-	set_page(:logged_in_home_page)
+	# set_page(:logged_in_home_page)
+	# -Drew
+	# Looks to me like this doesn't actually render to page and is probably unnecessary.
 	erb :index
 end
 
-get '/surveys/:id' do 
+get '/surveys/:id' do
 	@survey = Survey.find(params[:id])
 	set_page(:individual_survey)
 	erb :index

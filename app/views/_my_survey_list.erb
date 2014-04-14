@@ -1,6 +1,8 @@
-<h2>Here are your surveys:</h2>
+<h1>Here are your surveys:</h1>
 <ol>
   <% current_user.surveys.each do |survey| %>
-    <li><a href="/surveys/<%= survey.id %>"><%= survey.name %></a></li>
+    <li>
+      <a href="/surveys/<%= survey.id %>"><%= survey.name %></a>
+    </li>
   <% end %>
 </ol>
