@@ -76,6 +76,7 @@ ol {
 }
 
 #navbar p {
+  margin: 0;
   font-size: 2em;
   font-weight: bold;
 }
@@ -95,4 +96,18 @@ ol {
   border-color: gray !important;
   text-decoration: none;
   padding: 2px 10px;
+}
+
+#displayGraph {
+  background: url('img/navbar.png');
+  font-size: 1.75em;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color:white;
+  opacity:0.7;
+}
+
+#displayGraph:hover {
+  opacity:1.0;
 }
