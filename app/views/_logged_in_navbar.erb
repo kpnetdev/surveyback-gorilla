@@ -1,15 +1,19 @@
 <ul id="navbar">
   <li>
-    <input type="submit" class="btTxt" value="Home Page" id="Home Page"/>
+    <a href="/">Home Page</a>
+  <!--   <form id="Create New Survey" method="get" action="/">
+    <input type="submit" value="Home Page" id="Home Page"/> -->
   </li>
   <li>
-    <input type="submit" class="btTxt" value="Take Survey" id="Take Survey">
+    <a href="/surveys">Take Survey</a>
+    <!-- <input type="submit" value="Take Survey" id="Take Survey"> -->
   </li>
   <li>
-    <form id="Create New Survey" method="get" action="/surveys/new">
-    <input type="submit" class="btTxt" value="Create Survey" id="Create New Survey" method="get" action="/surveys/new">
+    <a href="/surveys/new">Create Survey</a>
+<!--     <form id="Create New Survey" method="get" action="/surveys/new">
+    <input type="submit" value="Create Survey" id="Create New Survey"> -->
   </li>
   <li>
-    <a href="/sessions/logout" class="btTxt">Log Out</a>
+    <a href="/sessions/logout">Log Out</a>
   </li>
 </ul>

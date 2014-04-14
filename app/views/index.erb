@@ -11,12 +11,18 @@
 	<%= erb :_display_graph %>
 <% end %>
 
+<% if current_page?(:all_surveys_list)%>
+  <%= erb :_logged_in_navbar %>
+  <%= erb :_all_surveys_list %>
+<% end %>
+
 <% if current_page?(:create_new_survey_page) %>
-    <%= erb :_survey_create_new_form %>
+  <%= erb :_logged_in_navbar %>
+  <%= erb :_create_survey_form %>
 <% end %>
 
 <% if current_page?(:individual_survey) %>
-	<%= erb :_logged_in_home_page %>
+  <%= erb :_logged_in_navbar %>
 	<%= erb :_individual_survey %>
 <% end %>
 
